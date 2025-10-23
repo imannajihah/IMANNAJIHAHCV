@@ -1,0 +1,101 @@
+  :root {
+  /* 🌤️ Light Mode Colors */
+  --base-variant: #eff8fe;      /* Soft background — very pale blue/white */
+  --text-color: #1a1a1a;        /* Near-black for smooth readability */
+  --navbar-bg: #5ab7e2;         /* Gentle sky blue navbar */
+  --toggle-icon-fill: #ffffff;  /* White toggle icon */
+}
+
+
+
+    body.darkmode {
+      /* Dark Mode Colors */
+      --base-variant: #29344e;       /* Body Background */
+      --text-color: #E0E0E0;         /* Text: Light Grey */
+      --navbar-bg: #344876;          /* Navbar Background */
+      --toggle-icon-fill: #ffffff;   /* Toggle Icon */
+    }
+
+    /*=======================================
+      BASE STYLING
+    =========================================*/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--base-variant);
+      color: var(--text-color);
+      font-size: 25px;
+      transition: background-color 0.4s, color 0.4s;
+    }
+    main{
+         font-family:georgia;
+    }
+    /* Navbar styling */
+    header .navbar {
+      font-size: 20px;
+      background-color: var(--navbar-bg);
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+      transition: background-color 0.4s ease;
+    }
+
+    .nav-link {
+      color: var(--text-color) !important;
+      transition: color 0.4s;
+    }
+
+    .nav-link:hover {
+      opacity: 0.8;
+    }
+
+    /*=======================================
+      THEME SWITCH BUTTON
+    =========================================*/
+    #theme-switch {
+      height: 30px;
+      width: 30px;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #theme-switch svg {
+      fill: var(--toggle-icon-fill);
+      transition: fill 0.4s;
+    }
+
+    /* Icon toggle visibility */
+    #theme-switch svg:last-child {
+      display: none;
+    }
+
+    body.darkmode #theme-switch svg:first-child {
+      display: none;
+    }
+
+    body.darkmode #theme-switch svg:last-child {
+      display: block;
+    }
+    div.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+div.flex-container > div {
+  margin: 10px;
+}
+
+/* Use media query and show the flex items vertically if screen width is less than 600px */
+@media screen and (max-width:600px) {
+  div.flex-container {
+    flex-direction: column;
+  }
+}
